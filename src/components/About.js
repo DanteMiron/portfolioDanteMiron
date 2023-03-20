@@ -11,8 +11,7 @@ const About = ({title, id}) => {
             <Card sx={{
                 width: "70vw",
                 display: "flex",
-                marginTop: theme.spacing(6),
-                position: "relative"
+                marginTop: theme.spacing(6)
                 }}>
                 <CardMedia image={dante} title="picture" sx={{
                     width: "250px",

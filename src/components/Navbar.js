@@ -39,7 +39,7 @@ const Navbar = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false)
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, position: "fixed", width: "100vw"}}>
         <AppBar position="static" 
         sx={
           {
