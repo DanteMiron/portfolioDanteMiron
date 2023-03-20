@@ -11,9 +11,9 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
+    <div >
       <Navbar />
-      <About  title="Acerca de mi" id="about" />
+      <About  title="Acerca de mi" id="about"/>
       <Skills title="Skills" id="skills" />
       <MyWork title="Proyectos" id="work" />
       <Contact title="Contacto" id="contact" />
