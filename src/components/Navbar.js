@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {AppBar, Box, Toolbar, Typography, Button, List, IconButton, Drawer, Divider, ListItemIcon, ListItem} from '@mui/material';
+import {AppBar, Box, Toolbar, Typography, Button, List, IconButton, Drawer, Divider, ListItemIcon, ListItem, Slide} from '@mui/material';
 import {Link, animateScroll as scroll} from "react-scroll"
 import InfoIcon from '@mui/icons-material/Info';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
@@ -40,7 +40,14 @@ const Navbar = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false)
     return (
-        <Box sx={{ flexGrow: 1, position: "fixed", width: "100vw"}}>
+        <Box sx={
+          { flexGrow: 1,
+            position: "fixed",
+            width: "100vw",
+            zIndex: "1" 
+          }
+          }>
+        
         <AppBar position="static" 
         sx={
           {
@@ -50,13 +57,15 @@ const Navbar = () => {
           }
         }>
           <Toolbar>
-           
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: "Playfair Display", fontStyle: "italic", fontWeight: "bold" }}>
+            <Slide  direction="right" in="true" timeout={750}> 
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: "Poppins", fontStyle: "italic", fontWeight: "bold" }}>
               Dante Pablo Miron
             </Typography>
+            </Slide>
+             <Slide  direction="right" in="true" timeout={750}>
             <List sx={
             {
-              fontFamily: "Playfair Display",
+              fontFamily: "Poppins",
               borderRadius: "50px",
               [theme.breakpoints.down("md")]:{
               display: "none"
@@ -82,6 +91,7 @@ const Navbar = () => {
                 ))
               }
             </List>
+            </Slide>
             <IconButton edge="end" onClick={()=>setOpen(!open)} sx={{
               display: "none",
               [theme.breakpoints.down("md")]:{
@@ -93,6 +103,7 @@ const Navbar = () => {
             </IconButton>
           </Toolbar>
         </AppBar>
+        
         <Drawer  anchor="right" open={open} onClose={()=>setOpen(false)}>
           <IconButton onClick={()=>setOpen(false)}>
             <CancelIcon sx={{color: "red"}}/>
@@ -116,7 +127,7 @@ const Navbar = () => {
                                   borderRadius: "5px",
                                   padding: "5px"
                                   },
-                        fontFamily: "Playfair Display",
+                        fontFamily: "Poppins",
                         color:"#192732"  
                         }
                       }>
