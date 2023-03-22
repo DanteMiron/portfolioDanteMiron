@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Slide, Typography } from '@mui/material';
+import { Box, CardMedia, Grid, Slide, Typography } from '@mui/material';
 import React from 'react';
 import dante from '../images/danteEnElSur.jpg';
 import { useTheme } from '@mui/material/styles';
@@ -32,14 +32,29 @@ const About = ({title, id}) => {
              }>{title}</Typography>
             </Slide>
             <Slide direction="right" in="true" timeout={750}>
-                <CardMedia image={dante} title="picture" sx={{
-                    width: "20%",
-                    height: "80vh",
-                    borderRadius: "20px",
-                    position: "relative",
-                    left: "10%",
-                    top: "5%"
-                }}/>
+                
+                <Grid container spacing={3} sx={
+                    {
+                        width: "30%",
+                        height: "80%",
+                        position: "relative",
+                        left: "10%",
+                        top: "5%"     
+                    }
+                    }>
+                    <Grid item md={8}>
+                    <CardMedia image={dante} component="img" title="picture" sx={{borderRadius: "20px", height: "100%", opacity: "0.8", transition:"750ms", ":hover":{opacity:"1", padding:"2%"}}}/>
+                    </Grid>
+                    <Grid item md={4}>
+                    <CardMedia image={dante} component="img" title="picture" sx={{borderRadius: "20px", height: "100%"}}/>
+                    </Grid>
+                    <Grid item md={4}>
+                    <CardMedia image={dante} component="img" title="picture" sx={{borderRadius: "20px", height: "100%"}}/>
+                    </Grid>
+                    <Grid item md={8}>
+                    <CardMedia image={dante} component="img" title="picture" sx={{borderRadius: "20px", height: "100%"}}/>
+                    </Grid>
+                </Grid>
             </Slide>
         </Box>
     );
