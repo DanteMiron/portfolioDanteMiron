@@ -51,14 +51,15 @@ const Navbar = () => {
         <AppBar position="static" 
         sx={
           {
-            backgroundColor: "#19222B",
-            color: "#BD9240"
+            backgroundColor: "#FFFFFF",
+            color: "#212721"
     
           }
         }>
           <Toolbar>
             <Slide  direction="right" in="true" timeout={750}> 
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: "Poppins", fontStyle: "italic", fontWeight: "bold" }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: "Poppins", fontWeight: "bold", textDecoration: "underline", textUnderlinePosition: "under",textDecorationColor: "#E03E52" }}>
+    
               Dante Pablo Miron
             </Typography>
             </Slide>
@@ -72,16 +73,16 @@ const Navbar = () => {
             },
              "& a": {
               fontSize: "1.4rem",
-              fontWeight: "bold",
+              fontWeight: "900",
               marginLeft: theme.spacing(3),
               fontWeight: "lighter",
-              transition: "800ms"
+              transition: "600ms"
             },
               "& a:hover": {
                 cursor: "pointer",
-                backgroundColor: "#B84357",
-                borderRadius: "5px",
-                padding: "5px"
+                textDecoration: "underline",
+                textUnderlinePosition: "under",
+                textDecorationColor: "#E03E52"  
               }
             }
             }>
